@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+report.html
+npm-debug.log
+config/*.pem
+coverage/
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Dist files
+dist/

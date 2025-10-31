@@ -1,0 +1,101 @@
+:root {
+  --wa-color-brand-fill-loud: var(--wa-color-blue-40);
+  --wa-color-brand-fill-quieter: var(--wa-color-blue-60);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  color: var(--wa-color-brand-fill-loud);
+}
+
+h2 {
+  color: var(--wa-color-brand-fill-quieter);
+}
+
+.app {
+  width: 100%;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em var(--wa-color-brand-fill-loud));
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em var(--wa-color-brand-fill-quieter));
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.icon-spacing {
+  margin: 0 0.5rem;
+}
+
+/* List Style None */
+
+.list-style-none {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.list-style-none li {
+  margin: 0.8rem 0;
+}
+
+.list-style-none wa-icon {
+  color: var(--wa-color-brand-fill-loud);
+  margin-right: 0.5rem;
+}
+
+.animation-overview .box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: var(--wa-color-brand-fill-quieter);
+  margin: 1.5rem;
+}
+
+/* Card Media Hover Effect */
+
+.card-media {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-media:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}

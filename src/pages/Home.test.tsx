@@ -37,11 +37,13 @@ describe('Home', () => {
     const bounceAnimation = animations.find(el => el.getAttribute('data-name') === 'bounce')
     const jelloAnimation = animations.find(el => el.getAttribute('data-name') === 'jello')
     const heartBeatAnimation = animations.find(el => el.getAttribute('data-name') === 'heartBeat')
-    
+
+    expect(bounceAnimation).toBeTruthy()
     expect(bounceAnimation).toBeInTheDocument()
+    expect(jelloAnimation).toBeTruthy()
     expect(jelloAnimation).toBeInTheDocument()
+    expect(heartBeatAnimation).toBeTruthy()
     expect(heartBeatAnimation).toBeInTheDocument()
-  })
 
   it('has a working counter', () => {
     render(<Home />)

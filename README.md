@@ -70,6 +70,8 @@ Web Awesome components can be customized with:
 - Slot content for custom content areas
 - Font Awesome icon variants (solid, regular, light, brand)
 
+Visit [webawesome.com](https://webawesome.com/) for more information.
+
 ## Available Scripts
 
 - `npm run dev` - Start development server
@@ -77,6 +79,28 @@ Web Awesome components can be customized with:
 - `npm run lint` - Run ESLint
 - `npm run preview` - Preview production build
 
----
+## Server Configuration (Recommended for React Router)
+Configure your server to serve index.html for all routes. This is called "client-side routing":
 
-Visit [webawesome.com](https://webawesome.com/) for more information.
+Check your server configuration
+```
+curl -I https://yoursite.com 2>/dev/null | grep -i server
+```
+
+For Apache (.htaccess):
+```
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+```
+
+For Nginx:
+```
+try_files $uri $uri/ /index.html;
+```
+
+For Netlify (_redirects file):
+```
+/*    /index.html   200
+```

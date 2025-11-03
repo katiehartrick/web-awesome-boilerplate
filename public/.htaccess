@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Exclude existing directories and files from React Router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Add your subdirectories here (example: exclude /api, /admin, /blog, etc.)
+# RewriteCond %{REQUEST_URI} !^/api
+# RewriteCond %{REQUEST_URI} !^/admin
+# RewriteCond %{REQUEST_URI} !^/blog
+
+# Serve index.html for React Router
+RewriteRule . /index.html [L]

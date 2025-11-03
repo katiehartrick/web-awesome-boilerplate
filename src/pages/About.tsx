@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import { WaIcon, WaCallout, WaCard } from '@awesome.me/webawesome/dist/react'
 
 function About() {
+  useEffect(() => {
+    document.title = 'About Web Awesome'
+  }, [])
+
   return (
     <>
       <div className="wa-stack wa-align-items-center">

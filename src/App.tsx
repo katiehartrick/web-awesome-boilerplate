@@ -7,9 +7,9 @@ import './App.css'
 function App() {
   return (
     <Router>
-      <div className="app">
+      <div className="app wa-stack wa-align-items-stretch">
         <Navigation />
-        <main className="main-content">
+        <main className="wa-stack wa-align-items-stretch">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

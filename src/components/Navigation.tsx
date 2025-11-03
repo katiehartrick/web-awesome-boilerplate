@@ -18,8 +18,7 @@ function Navigation() {
             variant={location.pathname === '/' ? 'brand' : 'neutral'}
             onClick={() => navigate('/')}
           >
-            <WaIcon name="home" />
-            Home
+            <WaIcon name="home" /> Home
           </WaButton>
         </li>
         <li>
@@ -27,8 +26,7 @@ function Navigation() {
             variant={location.pathname === '/about' ? 'brand' : 'neutral'}
             onClick={() => navigate('/about')}
           >
-            <WaIcon name="info-circle" />
-            About
+            <WaIcon name="info-circle" /> About
           </WaButton>
         </li>
       </ul>

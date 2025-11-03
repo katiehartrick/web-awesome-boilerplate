@@ -1,40 +1,59 @@
 :root {
   --wa-color-brand-fill-loud: var(--wa-color-blue-40);
   --wa-color-brand-fill-quieter: var(--wa-color-blue-60);
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-  max-width: 1280px;
+  inline-size: 100%;
+  max-inline-size: 960px;
   margin: 0 auto;
   padding: 2rem;
 }
 
 h1 {
   color: var(--wa-color-brand-fill-loud);
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
 h2 {
   color: var(--wa-color-brand-fill-quieter);
 }
 
-.app {
-  width: 100%;
+a {
+  font-weight: 500;
+  color: var(--wa-color-brand-fill-quieter);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--wa-color-brand-fill-loud);
 }
 
-.main-content {
-  width: 100%;
-}
+/* Framework Logo Styles */
 
-.logo {
+.framework-logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
+.framework-logo:hover {
   filter: drop-shadow(0 0 2em var(--wa-color-brand-fill-loud));
 }
-.logo.react:hover {
+.framework-logo.react:hover {
   filter: drop-shadow(0 0 2em var(--wa-color-brand-fill-quieter));
 }
 
@@ -53,12 +72,17 @@ h2 {
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.icon-spacing {
-  margin: 0 0.5rem;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }
 
 /* List Style None */
@@ -87,12 +111,21 @@ h2 {
   margin: 1.5rem;
 }
 
+.card {
+  padding: 2em;
+}
+
+.icon-spacing {
+  margin: 0 0.5rem;
+}
+
 /* Card Media Hover Effect */
 
 .card-media {
   transition: all 0.3s ease;
   border-radius: 12px;
   overflow: hidden;
+  max-width: 300px;
 }
 
 .card-media:hover {

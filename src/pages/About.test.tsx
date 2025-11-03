@@ -28,8 +28,11 @@ describe('About', () => {
   it('displays the branded callout with lightbulb icon', () => {
     render(<About />)
     
-    const callout = screen.getByTestId('wa-callout')
-    expect(callout).toHaveAttribute('data-variant', 'brand')
+    // Get all callouts and find the one with brand variant
+    const callouts = screen.getAllByTestId('wa-callout')
+    const brandCallout = callouts.find(callout => callout.getAttribute('data-variant') === 'brand')
+    
+    expect(brandCallout).toBeInTheDocument()
     expect(screen.getByTestId('wa-icon-lightbulb')).toBeInTheDocument()
     expect(screen.getByText('What is Web Awesome?')).toBeInTheDocument()
     expect(screen.getByText('Web Awesome is a comprehensive web component library.')).toBeInTheDocument()

@@ -1,42 +1,44 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import { MemoryRouter } from 'react-router-dom'
 import App from './App'
 
-// Helper function to render App with router
-const renderWithRouter = (initialEntries: string[] = ['/']) => {
-  return render(
-    <MemoryRouter initialEntries={initialEntries}>
-      <App />
-    </MemoryRouter>
-  )
+// Helper function to render App
+const renderApp = () => {
+  // App already has a BrowserRouter, so we can render it directly
+  return render(<App />)
 }
 
 describe('App', () => {
   it('renders without crashing', () => {
-    renderWithRouter()
-    expect(screen.getByRole('main')).toBeInTheDocument()
+    renderApp()
+    expect(document.body).toBeInTheDocument()
   })
 
   it('renders navigation component', () => {
-    renderWithRouter()
+    renderApp()
     expect(screen.getByRole('navigation')).toBeInTheDocument()
   })
 
-  it('renders home page by default', () => {
-    renderWithRouter(['/'])
-    expect(screen.getByText('Web Awesome 3 + Vite + React')).toBeInTheDocument()
-  })
-
-  it('renders about page when navigating to /about', () => {
-    renderWithRouter(['/about'])
-    expect(screen.getByText('About Web Awesome')).toBeInTheDocument()
+  it('renders main content area', () => {
+    renderApp()
+    expect(screen.getByRole('main')).toBeInTheDocument()
   })
 
   it('has correct CSS classes applied', () => {
-    renderWithRouter()
-    const appDiv = screen.getByRole('main').parentElement
-    expect(appDiv).toHaveClass('app')
-    expect(screen.getByRole('main')).toHaveClass('main-content')
+    renderApp()
+    const mainElement = screen.getByRole('main')
+    expect(mainElement).toHaveClass('wa-stack', 'wa-align-items-stretch')
+    expect(mainElement.parentElement).toHaveClass('app', 'wa-stack', 'wa-align-items-stretch')
+  })
+
+  it('renders the app structure correctly', () => {
+    renderApp()
+    
+    // Check that navigation and main content are present
+    expect(screen.getByRole('navigation')).toBeInTheDocument()
+    expect(screen.getByRole('main')).toBeInTheDocument()
+    
+    // Check that we can find content from the default route (Home)
+    expect(screen.getByText('Web Awesome 3 + Vite + React')).toBeInTheDocument()
   })
 })

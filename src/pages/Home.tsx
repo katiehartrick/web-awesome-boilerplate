@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { WaAnimation, WaButton, WaCallout, WaCard, WaIcon } from '@awesome.me/webawesome/dist/react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '../assets/vite.svg'
 
 function Home() {
+  useEffect(() => {
+    document.title = 'Web Awesome + Vite + React'
+  }, [])
+  
   const [count, setCount] = useState(0)
 
   return (

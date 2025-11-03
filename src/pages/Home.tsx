@@ -11,10 +11,10 @@ function Home() {
       <div className="wa-stack wa-align-items-center">
         <div>
           <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-            <img src={viteLogo} className="logo" alt="Vite logo"/>
+            <img src={viteLogo} className="framework-logo" alt="Vite logo"/>
           </a>
           <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-            <img src={reactLogo} className="logo react" alt="React logo"/>
+            <img src={reactLogo} className="framework-logo react" alt="React logo"/>
           </a>
         </div>
         <h1 className="wa-align-items-center">

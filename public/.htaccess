@@ -9,7 +9,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteCond %{REQUEST_URI} !^/admin
 # RewriteCond %{REQUEST_URI} !^/blog
 
-# Only apply to the root level, not subdirectories
-
 # Serve index.html for React Router
 RewriteRule . /index.html [L]

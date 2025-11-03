@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest'
 
 // Simple utility functions for testing
-export const add = (a: number, b: number): number => a + b
-export const multiply = (a: number, b: number): number => a * b
-export const formatName = (first: string, last: string): string => `${first} ${last}`
+const add = (a: number, b: number): number => a + b
+const multiply = (a: number, b: number): number => a * b
+const formatName = (first: string, last: string): string => `${first} ${last}`
 
 describe('Utility Functions', () => {
   describe('add', () => {

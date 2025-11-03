@@ -17,16 +17,6 @@ vi.mock('react-router-dom', async () => {
 
 // Helper function to render Navigation with router
 const renderWithRouter = (pathname = '/') => {
-  // Mock useLocation to return the desired pathname
-  vi.doMock('react-router-dom', async () => {
-    const actual = await vi.importActual('react-router-dom')
-    return {
-      ...actual,
-      useNavigate: () => mockNavigate,
-      useLocation: () => ({ pathname }),
-    }
-  })
-  
   return render(
     <MemoryRouter>
       <Navigation />
